@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8f8" />
+  <meta name="description" content="A special birthday surprise." />
+  <title>Happy Birthday, Nama Dia ❤️</title>
+
+  <!-- Elegant + readable fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- =========================
+       LOADING SCREEN
+  ========================== -->
+  <div id="loadingScreen" class="screen-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="mini-heart">♥</div>
+      <p>Preparing your surprise...</p>
+      <span>with love ♡</span>
+    </div>
+  </div>
+
+  <!-- =========================
+       PASSWORD SCREEN
+  ========================== -->
+  <section id="passwordScreen" class="password-screen" aria-label="Password screen">
+    <div class="password-backdrop"></div>
+    <div class="floating-decor floating-decor--one">✦</div>
+    <div class="floating-decor floating-decor--two">♡</div>
+    <div class="floating-decor floating-decor--three">✧</div>
+
+    <div class="password-card glass-card">
+      <span class="eyebrow">A LITTLE SURPRISE</span>
+      <div class="password-ornament">♡</div>
+      <h1>A Special<br><em>Surprise For You</em></h1>
+      <p>Enter the secret password to open your birthday surprise.</p>
+
+      <form id="passwordForm" class="password-form">
+        <label class="sr-only" for="passwordInput">Password</label>
+        <div class="password-input-wrap">
+          <span class="input-icon">♥</span>
+          <input id="passwordInput" type="password" placeholder="Enter password" autocomplete="off" />
+          <button id="togglePassword" class="eye-button" type="button" aria-label="Show password">◉</button>
+        </div>
+        <button class="primary-button" type="submit">
+          <span>Open Surprise</span>
+          <span class="button-arrow">→</span>
+        </button>
+        <p id="passwordMessage" class="password-message" role="status"></p>
+      </form>
+
+      <p class="tiny-note">made with a little bit of love ✿</p>
+    </div>
+  </section>
+
+  <!-- =========================
+       MAIN WEBSITE
+  ========================== -->
+  <div id="mainSite" class="main-site" aria-hidden="true">
+
+    <!-- Decorative ambient layer -->
+    <div class="ambient-orb ambient-orb--one"></div>
+    <div class="ambient-orb ambient-orb--two"></div>
+    <div id="heartLayer" class="heart-layer" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+      <nav class="navbar container">
+        <a href="#home" class="brand" aria-label="Home">
+          <span class="brand-mark">♡</span>
+          <span>For You</span>
+        </a>
+
+        <button id="menuToggle" class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div id="navLinks" class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#message">Message</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#memories">Memories</a>
+          <a href="#wishes">Wishes</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero section">
+        <div class="hero-glow"></div>
+
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">TODAY IS ALL ABOUT YOU</span>
+            <h2>Happy Birthday,<br><em id="heroName">Nama Dia</em> ♡</h2>
+            <p id="heroSubtitle">
+              Another beautiful chapter begins today. May your days be filled with little reasons to smile.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#message">
+                <span>Open Your Surprise</span>
+                <span class="button-arrow">↓</span>
+              </a>
+              <button id="musicHintButton" class="text-button" type="button">
+                <span class="music-dot">♫</span> turn the music on
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal reveal-delay">
+            <div class="photo-frame photo-frame--hero">
+              <div class="photo-shadow"></div>
+              <img id="heroPhoto" src="assets/images/photo1.jpg" alt="Birthday girl" />
+              <div class="photo-caption">a beautiful soul ✿</div>
+            </div>
+            <div class="floating-card floating-card--top">♡</div>
+            <div class="floating-card floating-card--bottom">with love</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MESSAGE -->
+      <section id="message" class="section section-soft">
+        <div class="container narrow">
+          <div class="section-heading reveal">
+            <span class="eyebrow">A FEW WORDS FOR YOU</span>
+            <h3>Birthday <em>Message</em></h3>
+            <div class="heading-line"></div>
+          </div>
+
+          <article class="letter-card reveal reveal-delay">
+            <div class="letter-top">
+              <span>02 / 10 / 2026</span>
+              <span>♡</span>
+            </div>
+            <p id="birthdayMessage"></p>
+            <div class="letter-signature">
+              <span>with all the love,</span>
+              <strong>someone who cares ♡</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">LITTLE MOMENTS</span>
+            <h3>Beautiful <em>Memories</em></h3>
+            <p>Six little frames for the moments worth keeping.</p>
+          </div>
+
+          <div id="galleryGrid" class="gallery-grid"></div>
+        </div>
+      </section>
+
+      <!-- MEMORY TIMELINE -->
+      <section id="memories" class="section section-soft">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">A STORY IN LITTLE CHAPTERS</span>
+            <h3>Our <em>Timeline</em></h3>
+            <p>Not every memory needs a long story. Sometimes a year is enough.</p>
+          </div>
+
+          <div id="timeline" class="timeline"></div>
+        </div>
+      </section>
+
+      <!-- WISHES -->
+      <section id="wishes" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">TODAY'S LITTLE WISHES</span>
+            <h3>For Your Next <em>Chapter</em></h3>
+          </div>
+
+          <div id="wishGrid" class="wish-grid"></div>
+        </div>
+      </section>
+
+      <!-- FINAL SURPRISE -->
+      <section id="finale" class="section finale-section">
+        <div class="finale-stars" aria-hidden="true">✦　♡　✧　♡　✦</div>
+        <div class="container narrow finale-card reveal">
+          <span class="eyebrow">ONE MORE THING...</span>
+          <h3>Make a <em>Wish</em> ♡</h3>
+          <p>
+            Happy Birthday, <span id="finalName">Nama Dia</span>.
+            May your days always be filled with happiness, warm people, peaceful moments,
+            and beautiful surprises.
+          </p>
+          <button id="wishButton" class="primary-button primary-button--center" type="button">
+            <span>Make a Wish</span>
+            <span>✦</span>
+          </button>
+          <p id="wishResult" class="wish-result" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <!-- MUSIC PLAYER -->
+    <div class="music-widget">
+      <button id="musicButton" class="music-button" type="button" aria-label="Play music" aria-pressed="false">
+        <span id="musicIcon">♫</span>
+      </button>
+      <div class="music-label">
+        <strong id="musicStatus">Music Off</strong>
+        <span>birthday soundtrack</span>
+      </div>
+    </div>
+
+    <audio id="birthdayAudio" preload="auto" loop>
+      <source id="audioSource" src="assets/music/TULUS - Monokrom (Official Music Video) - Tulus.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button id="lightboxClose" class="lightbox-close" type="button" aria-label="Close image">×</button>
+      <button id="lightboxPrev" class="lightbox-nav lightbox-nav--prev" type="button" aria-label="Previous image">‹</button>
+      <figure class="lightbox-content">
+        <img id="lightboxImage" src="" alt="" />
+        <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+      <button id="lightboxNext" class="lightbox-nav lightbox-nav--next" type="button" aria-label="Next image">›</button>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-heart">♡</div>
+        <p>Made for a beautiful birthday.</p>
+        <span>Keep smiling. Keep shining. Keep being you.</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
